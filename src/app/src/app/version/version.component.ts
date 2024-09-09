@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import { Observable, map } from 'rxjs';
+import { SystemService } from '../system.service';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-version',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './version.component.html',
+  styleUrl: './version.component.less'
+})
+export class VersionComponent {
+  public version$!: Observable<string>;
+
+  constructor(private systemService: SystemService) { }
+
+  ngOnInit(): void {
+    this.version$ = this.systemService.getVersion().pipe(map(value => value.version));
+  }
+}
