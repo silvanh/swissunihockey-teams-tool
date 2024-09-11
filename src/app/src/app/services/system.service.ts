@@ -10,7 +10,7 @@ export class SystemService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getApplicationProperty(): Observable<ApplicationPropertyDTO> {
-    return this.httpClient.get<ApplicationPropertyDTO>("/api/system/version");
+  public getApplicationProperty(key: string): Observable<ApplicationPropertyDTO> {
+    return this.httpClient.get<ApplicationPropertyDTO>(`/api/system/applicationProperty/${encodeURIComponent(key)}`);
   }
 }

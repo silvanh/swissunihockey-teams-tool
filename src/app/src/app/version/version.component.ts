@@ -16,6 +16,6 @@ export class VersionComponent {
   constructor(private systemService: SystemService) { }
 
   ngOnInit(): void {
-    this.version$ = this.systemService.getApplicationProperty().pipe(map(applicationProperty => applicationProperty.value));
+    this.version$ = this.systemService.getApplicationProperty('version').pipe(map(applicationProperty => applicationProperty.value));
   }
 }
