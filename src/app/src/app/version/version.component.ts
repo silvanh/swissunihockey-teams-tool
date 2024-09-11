@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { SystemService } from '../system.service';
+import { SystemService } from '../services/system.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
