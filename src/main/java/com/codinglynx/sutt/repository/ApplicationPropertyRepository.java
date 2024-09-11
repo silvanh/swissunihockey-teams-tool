@@ -1,9 +1,10 @@
 package com.codinglynx.sutt.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.data.repository.Repository;
 
 import com.codinglynx.sutt.domain.ApplicationProperty;
 
-public interface ApplicationPropertyRepository extends JpaRepository<ApplicationProperty, String> {
+public interface ApplicationPropertyRepository extends Repository<ApplicationProperty, String> {
     ApplicationProperty findByKey(String key);
 }
