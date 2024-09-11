@@ -9,7 +9,7 @@ export class SystemService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getVersion(): Observable<{ version: string }> {
-    return this.httpClient.get<{ version: string }>("/api/system/version");
+  public getApplicationProperty(): Observable<{ key: string, value: string }> {
+    return this.httpClient.get<{ key: string, value: string }>("/api/system/version");
   }
 }

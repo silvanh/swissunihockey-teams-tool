@@ -5,18 +5,21 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 import jakarta.persistence.GeneratedValue;
-import lombok.Value;
 
 @Entity
-@Value
-public class ApplicationVersion {
+@Data
+public class ApplicationProperty {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
 
-    @Column(name = "version_string")
-    private String versionString;
+    @Column(name = "key")
+    private String key;
+
+    @Column(name = "value")
+    private String value;
     
 }
