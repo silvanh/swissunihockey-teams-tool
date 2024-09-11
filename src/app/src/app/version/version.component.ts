@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { SystemService } from '../system.service';
+import { SystemService } from '../services/system.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,6 +16,6 @@ export class VersionComponent {
   constructor(private systemService: SystemService) { }
 
   ngOnInit(): void {
-    this.version$ = this.systemService.getVersion().pipe(map(value => value.version));
+    this.version$ = this.systemService.getApplicationProperty('version').pipe(map(applicationProperty => applicationProperty.value));
   }
 }
